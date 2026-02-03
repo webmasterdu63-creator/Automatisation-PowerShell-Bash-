@@ -1,5 +1,5 @@
 # Automatisation-PowerShell-Bash-
-script d’installation automatisée d’un environnement Windows + logs + rollback.
+script d’installation automatisée d’un environnement Windows ou Linux + logs + rollback.
 # Automatisation PowerShell / Bash  
 Script d’installation automatisée d’un environnement Windows avec gestion des logs et mécanisme de rollback.
 
