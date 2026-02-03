@@ -6,7 +6,7 @@ Script d’installation automatisée d’un environnement Windows avec gestion d
 ---
 
 ## 🎯 Objectif du projet
-Ce projet a pour but de simplifier et fiabiliser le déploiement d’un environnement Windows grâce à une automatisation complète.  
+Ce projet a pour but de simplifier et fiabiliser le déploiement d’un environnement Windows ou Linux grâce à une automatisation complète.  
 Il permet d’éviter les erreurs humaines, d’accélérer les installations et d’assurer une traçabilité totale via un système de logs détaillés.
 
 ---
