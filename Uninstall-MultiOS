@@ -1,0 +1,119 @@
+<#
+.SYNOPSIS
+    Script de désinstallation multi-OS (Windows + Linux)
+
+.DESCRIPTION
+    Détecte automatiquement l’OS et exécute la désinstallation adaptée :
+    - Windows : winget (prioritaire), fallback Win32_Product
+    - Linux (Ubuntu/Debian) : apt remove
+    Inclut : Verbose, DryRun, Force, logs.
+
+.PARAMETER AppName
+    Nom du logiciel à désinstaller.
+
+.PARAMETER DryRun
+    Simule la désinstallation.
+
+.PARAMETER Force
+    Ignore certaines vérifications.
+
+.EXAMPLE
+    ./Uninstall-MultiOS.ps1 -AppName "curl" -Verbose
+#>
+
+param(
+    [Parameter(Mandatory=$true)]
+    [string]$AppName,
+
+    [switch]$DryRun,
+    [switch]$Force
+)
+
+# --- LOGGING ---
+$LogFile = "$PSScriptRoot/uninstall.log"
+
+function Write-Log {
+    param([string]$Message)
+    $ts = (Get-Date).ToString("yyyy-MM-dd HH:mm:ss")
+    "$ts - $Message" | Out-File -FilePath $LogFile -Append
+    Write-Verbose $Message
+}
+
+Write-Log "=== Début du script ==="
+Write-Log "Application ciblée : $AppName"
+
+if ($DryRun) { Write-Log "[DryRun] Mode simulation activé." }
+
+# --- DÉTECTION OS ---
+$Platform = if ($IsWindows) { "Windows" } elseif ($IsLinux) { "Linux" } else { "Unknown" }
+
+Write-Log "Plateforme détectée : $Platform"
+
+if ($Platform -eq "Unknown") {
+    Write-Log "OS non supporté."
+    exit 1
+}
+
+# ============================
+#   WINDOWS
+# ============================
+if ($Platform -eq "Windows") {
+
+    Write-Log "Recherche de l'application sous Windows..."
+
+    # Tentative via winget
+    $wingetList = winget list --name $AppName 2>$null
+
+    if ($wingetList) {
+        Write-Log "Application trouvée via winget."
+
+        if ($DryRun) {
+            Write-Log "[DryRun] Désinstallation winget simulée."
+        } else {
+            Write-Log "Désinstallation via winget..."
+            winget uninstall --name $AppName --silent
+        }
+    }
+    else {
+        # Fallback Win32_Product
+        Write-Log "Recherche via Win32_Product..."
+        $app = Get-WmiObject -Class Win32_Product | Where-Object { $_.Name -eq $AppName }
+
+        if (-not $app) {
+            Write-Log "Application introuvable."
+            if (-not $Force) { exit }
+        } else {
+            if ($DryRun) {
+                Write-Log "[DryRun] Désinstallation Win32_Product simulée."
+            } else {
+                Write-Log "Désinstallation via Win32_Product..."
+                $app.Uninstall() | Out-Null
+            }
+        }
+    }
+}
+
+# ============================
+#   LINUX (Ubuntu/Debian)
+# ============================
+if ($Platform -eq "Linux") {
+
+    Write-Log "Recherche de l'application sous Linux..."
+
+    $installed = dpkg -l | Select-String $AppName
+
+    if (-not $installed) {
+        Write-Log "Application non installée."
+        if (-not $Force) { exit }
+    }
+
+    if ($DryRun) {
+        Write-Log "[DryRun] Désinstallation apt simulée."
+    } else {
+        Write-Log "Désinstallation via apt..."
+        sudo apt remove -y $AppName
+        sudo apt autoremove -y
+    }
+}
+
+Write-Log "=== Fin du script ==="
