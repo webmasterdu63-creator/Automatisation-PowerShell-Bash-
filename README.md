@@ -7,13 +7,12 @@
   <img src="https://img.shields.io/badge/migration-Windows%20%E2%86%92%20Linux-yellow" />
   <img src="https://img.shields.io/badge/license-MIT-lightgrey" />
 </p>
+
 Script d’installation automatisée d’un environnement Windows ou Linux + logs + rollback.
 
 <p align="center">
   <img src="logo1.png" width="200" alt="Automatisation-PowerShell Logo">
 </p>
-
-
 
 
 ## 🎯 Objectif du projet
@@ -30,11 +29,9 @@ Il permet d’éviter les erreurs humaines, d’accélérer les installations et
 - Messages d’état clairs pour faciliter le support
 - Scripts compatibles PowerShell et Bash selon les besoins
 
----
-
 ## 🏗️ Architecture du projet
 
----
+
 
 ## 🚀 Installation & utilisation
 
