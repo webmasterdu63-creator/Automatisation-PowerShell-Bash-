@@ -30,38 +30,7 @@ Il permet d’éviter les erreurs humaines, d’accélérer les installations et
 - Scripts compatibles PowerShell et Bash selon les besoins
 
 ## 🏗️ Architecture du projet
-Automatisation-PowerShell-Bash/
-│
-├── Windows/
-│   ├── scripts/
-│   │   ├── uninstall.ps1
-│   │   ├── install.ps1
-│   │   └── utils.ps1
-│   ├── logs/
-│   │   └── *.log
-│   └── config/
-│       └── settings.json
-│
-├── Linux/
-│   ├── scripts/
-│   │   ├── uninstall.sh
-│   │   ├── install.sh
-│   │   └── utils.sh
-│   ├── logs/
-│   │   └── *.log
-│   └── config/
-│       └── settings.conf
-│
-├── common/
-│   ├── documentation/
-│   │   ├── README.md
-│   │   └── architecture.md
-│   ├── assets/
-│   │   └── images, schémas, logos
-│   └── templates/
-│       └── modèles de logs, configs, messages
-│
-└── main.md (ou README.md)
+
 Description des dossiers
 Windows/
 
