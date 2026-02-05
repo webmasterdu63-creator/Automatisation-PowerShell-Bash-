@@ -1,9 +1,6 @@
 # Automatisation-PowerShell-Bash-
 script d’installation automatisée d’un environnement Windows ou Linux + logs + rollback.
-# Automatisation PowerShell / Bash  
-Script d’installation automatisée d’un environnement Windows avec gestion des logs et mécanisme de rollback.
-
----
+<img src="assets/logo1.png" width="200" alt="Automation Logo">
 
 ## 🎯 Objectif du projet
 Ce projet a pour but de simplifier et fiabiliser le déploiement d’un environnement Windows ou Linux grâce à une automatisation complète.  
