@@ -37,3 +37,37 @@ bash src/install.sh
 
 ```bash
 git clone https://github.com/webmasterdu63-creator/Automatisation-PowerShell-Bash.git
+
+# Automated Setup: Windows & Linux Environment
+
+<p align="center">
+  <img src="logo1.png" width="400" alt="Automation Logo">
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/status-active-brightgreen" alt="Status">
+  <img src="https://img.shields.io/badge/platform-Windows%20%7C%20Linux-lightgrey" alt="Platform">
+  <img src="https://img.shields.io/badge/PowerShell-5.1%2B%20%2F%207%2B-blue" alt="PowerShell">
+  <img src="https://img.shields.io/badge/Bash-4.0%2B-orange" alt="Bash">
+  <img src="https://img.shields.io/badge/Safety-Rollback%20Enabled-red" alt="Safety">
+  <img src="https://img.shields.io/badge/license-MIT-blueviolet" alt="License">
+</p>
+
+---
+
+## 📖 Description
+A professional automation suite designed to deploy and configure development environments seamlessly on both Windows and Linux. This tool focuses on reliability with integrated logging and a safety rollback mechanism.
+
+## ✨ Key Features
+* **Multi-Platform**: Native support for PowerShell (Windows) and Bash (Linux).
+* **Automated Install**: Silent installation of tools, runtimes, and applications.
+* **Advanced Logging**: Every action is tracked in detailed log files for auditing.
+* **Rollback System**: Automatically reverts changes if a critical error occurs during setup.
+
+## 🛠️ Installation & Usage
+
+### Windows (PowerShell)
+```powershell
+git clone [https://github.com/webmasterdu63-creator/Automatisation-PowerShell-Bash-.git](https://github.com/webmasterdu63-creator/Automatisation-PowerShell-Bash-.git)
+cd Automatisation-PowerShell-Bash-
+.\setup.ps1
