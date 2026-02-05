@@ -39,15 +39,6 @@ bash src/install.sh
 git clone https://github.com/webmasterdu63-creator/Automatisation-PowerShell-Bash.git
 
 # Automated Setup: Windows & Linux Environment
-<p align="center">
-  <img src="logo1.png" width="200" alt="Automatisation-PowerShell Logo">
-</p>
-
-
-<p align="center">
-  <img src="logo1.png" width="400" alt="Automation Logo">
-</p>
-
 
 ## 📖 Description
 A professional automation suite designed to deploy and configure development environments seamlessly on both Windows and Linux.
