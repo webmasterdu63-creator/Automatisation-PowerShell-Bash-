@@ -66,12 +66,40 @@ Ressources partagées entre les deux environnements.
 ## 🚀 Installation & utilisation
 
 ### 1. Cloner le dépôt
+
+English Version — Installation & Usage
+1. Clone the repository:
+git clone https://github.com/webmasterdu63-creator/Automatisation-PowerShell-Bash.git
+cd Automatisation-PowerShell-Bash
+
+Windows (PowerShell)
+Run the installer
 Set-ExecutionPolicy Bypass -Scope Process -Force
 .\src\install.ps1
+Set-ExecutionPolicy Bypass -Scope Process -Force
+.\src\install.ps1
+
+Linux (Bash)
+Make the script executable and run it
+chmod +x src/install.sh
 bash src/install.sh
 
-```bash
-git clone https://github.com/webmasterdu63-creator/Automatisation-PowerShell-Bash.git
+ Désinstallation — Windows (PowerShell)
+ Set-ExecutionPolicy Bypass -Scope Process -Force
+.\src\uninstall.ps1
+
+Ce script :
+
+    supprime les fichiers installés
+
+    nettoie les configurations
+
+    enregistre toutes les actions dans les logs
+
+    déclenche un rollback si une erreur critique survient
+Désinstallation — Linux (Bash)
+chmod +x src/uninstall.sh
+bash src/uninstall.sh
 
 # Automated Setup: Windows & Linux Environment
 
