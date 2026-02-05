@@ -1,5 +1,5 @@
 # Automatisation-PowerShell-Bash-
-script d’installation automatisée d’un environnement Windows ou Linux + logs + rollback.
+Script d’installation automatisée d’un environnement Windows ou Linux + logs + rollback.
 
 <p align="center">
   <img src="logo1.png" width="400" alt="Automatisation-PowerShell Logo">
