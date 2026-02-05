@@ -2,7 +2,7 @@
 script d’installation automatisée d’un environnement Windows ou Linux + logs + rollback.
 
 <p align="center">
-  <img src="assets/logo1.png" width="400" alt="Automatisation-PowerShell Logo">
+  <img src="logo1.png" width="400" alt="Automatisation-PowerShell Logo">
 </p>
 
 
