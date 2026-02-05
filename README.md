@@ -30,7 +30,68 @@ Il permet d’éviter les erreurs humaines, d’accélérer les installations et
 - Scripts compatibles PowerShell et Bash selon les besoins
 
 ## 🏗️ Architecture du projet
+Automatisation-PowerShell-Bash/
+│
+├── Windows/
+│   ├── scripts/
+│   │   ├── uninstall.ps1
+│   │   ├── install.ps1
+│   │   └── utils.ps1
+│   ├── logs/
+│   │   └── *.log
+│   └── config/
+│       └── settings.json
+│
+├── Linux/
+│   ├── scripts/
+│   │   ├── uninstall.sh
+│   │   ├── install.sh
+│   │   └── utils.sh
+│   ├── logs/
+│   │   └── *.log
+│   └── config/
+│       └── settings.conf
+│
+├── common/
+│   ├── documentation/
+│   │   ├── README.md
+│   │   └── architecture.md
+│   ├── assets/
+│   │   └── images, schémas, logos
+│   └── templates/
+│       └── modèles de logs, configs, messages
+│
+└── main.md (ou README.md)
+Description des dossiers
+Windows/
 
+Contient l’ensemble des scripts PowerShell dédiés à l’automatisation sous Windows.
+
+    scripts/ : scripts principaux (installation, désinstallation, utilitaires).
+
+    logs/ : journaux générés automatiquement.
+
+    config/ : fichiers de configuration spécifiques à Windows.
+
+Linux/
+
+Contient les scripts Bash pour les environnements Linux.
+
+    scripts/ : scripts principaux Bash.
+
+    logs/ : journaux générés automatiquement.
+
+    config/ : configurations Linux.
+
+common/
+
+Ressources partagées entre les deux environnements.
+
+    documentation/ : documents techniques, schémas, guides.
+
+    assets/ : images, logos, captures.
+
+    templates/ : modèles réutilisables (logs, messages, configs).
 
 
 ## 🚀 Installation & utilisation
